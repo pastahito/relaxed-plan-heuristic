@@ -1,0 +1,33 @@
+{
+  "name": "rpb-heuristic",
+  "version": "0.0.5",
+  "description": "Vanilla relaxed-plan-based heuristic computing for classical planning.",
+  "keywords": [
+    "RPB",
+    "RPG",
+    "relaxed plan based",
+    "plan",
+    "planning",
+    "AI"
+  ],
+  "bugs": "https://github.com/pastahito/relaxed-plan-heuristic/issues",
+  "main": "./lib/index",
+  "files": [
+    "LICENSE",
+    "README.md",
+    "lib/"
+  ],
+  "scripts": {
+    "test": "tape test/*.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pastahito/relaxed-plan-heuristic"
+  },
+  "author": "J. Renato Ramos González <renato.etc.etc.etc@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "tap-spec": "^4.1.1",
+    "tape": "^4.6.0"
+  }
+}
