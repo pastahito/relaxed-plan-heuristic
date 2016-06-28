@@ -53,5 +53,37 @@ module.exports = () => {
 		},
 	}
 
-	return [a, b]
+	// Problem C
+	c = {
+		initialState : {
+			'tire_in(axle)' : 'flat_tire',
+			'tire_in(trunk)' :  'spare_tire',
+			'location(flat_tire)' : 'axle',
+			'location(spare_tire)' : 'trunk'
+		},
+		goalState : {
+			'tire_in(axle)' : 'spare_tire',
+			'tire_in(trunk)' : 'flat_tire'
+		},
+		preconditions : {
+			'remove_flat' : { 'location(flat_tire)' : 'axle' },
+			'store_flat' : { 'location(flat_tire)' : 'floor', 'tire_in(trunk)' : 'none' },
+			'take_spare' : { 'location(spare_tire)' : 'trunk' },
+			'install_spare' : { 'location(spare_tire)' : 'floor', 'tire_in(axle)' : 'none'	}
+		},
+		postconditions : {
+			'remove_flat' : { 'location(flat_tire)' : 'floor', 'tire_in(axle)' : 'none' },
+			'store_flat' : { 'location(flat_tire)' : 'trunk', 'tire_in(trunk)' : 'flat_tire' },
+			'take_spare' : { 'location(spare_tire)' : 'floor', 'tire_in(trunk)' : 'none' },
+			'install_spare' : { 'location(spare_tire)' : 'axle', 'tire_in(axle)' : 'spare_tire' }
+		},
+		costs : {
+			'remove_flat' : 2,
+			'store_flat' : 1,
+			'take_spare' : 1,
+			'install_spare' : 2
+		}
+	}
+
+	return [a, b, c]
 }
